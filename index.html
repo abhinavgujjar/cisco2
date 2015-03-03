@@ -20,29 +20,7 @@
 		<h1>{{greeting}}</h1>
 	</div>
 
-	<script type="text/javascript">
-
-	//declared a module
-	angular.module('myApp', []);
-
-	//rerference a module
-	angular.module('myApp').controller('mainController', 
-		function($scope, $rootScope){
-			//.greeting = 'Good Afternoon, Cisco!!';
-		}
-	)
-
-	angular.module('myApp').controller('nestedController', 
-		function($scope, $rootScope){
-			$rootScope.greeting = "OLA!";
-		}
-	)
-
-	angular.module('myApp').controller('secondController', 
-		function($scope){
-			//$scope.greeting = "I am second!";
-		}
-	)
+	<script type="text/javascript" src="app.js">
 
 
 	</script>
