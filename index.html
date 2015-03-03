@@ -11,7 +11,10 @@
 		<h1>{{greeting}}</h1>
 		<div ng-controller="nestedController" style="color:red">
 			<h1>{{greeting}}</h1>
+			<h1>{{$parent.greeting}}</h1>
+
 		</div>
+		<h1>{{greeting}}</h1>
 	</div>
 	<div ng-controller="secondController" style="color:blue">
 		<h1>{{greeting}}</h1>
@@ -24,20 +27,20 @@
 
 	//rerference a module
 	angular.module('myApp').controller('mainController', 
-		function($scope){
-			$scope.greeting = 'Good Afternoon, Cisco!!';
+		function($scope, $rootScope){
+			//.greeting = 'Good Afternoon, Cisco!!';
 		}
 	)
 
 	angular.module('myApp').controller('nestedController', 
-		function(){
-			
+		function($scope, $rootScope){
+			$rootScope.greeting = "OLA!";
 		}
 	)
 
 	angular.module('myApp').controller('secondController', 
-		function(){
-			
+		function($scope){
+			//$scope.greeting = "I am second!";
 		}
 	)
 

@@ -1,6 +1,6 @@
 **Notes**
 
- - bower 
+ - bower : requires nodejs to be installed.
 	 
 	 ``
 	 npm install bower
