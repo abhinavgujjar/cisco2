@@ -1,6 +1,11 @@
 **Notes**
 
  - bower 
- ``
- npm install bower
- ``
+	 
+	 ``
+	 npm install bower
+	 ``
+
+	 ``
+	 bower install angular
+	 ``
