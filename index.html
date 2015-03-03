@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Hello World!</title>
+	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+</head>
+<body >
+	<div ng-controller="mainController">
+		<h1>{{'Hello' + 'World'}}</h1>
+		<h1>{{7+5}}</h1>
+		<h1>{{greeting}}</h1>
+		<div ng-controller="nestedController" style="color:red">
+			<h1>{{greeting}}</h1>
+		</div>
+	</div>
+	<div ng-controller="secondController" style="color:blue">
+		<h1>{{greeting}}</h1>
+	</div>
+
+	<script type="text/javascript">
+
+	//declared a module
+	angular.module('myApp', []);
+
+	//rerference a module
+	angular.module('myApp').controller('mainController', 
+		function($scope){
+			$scope.greeting = 'Good Afternoon, Cisco!!';
+		}
+	)
+
+	angular.module('myApp').controller('nestedController', 
+		function(){
+			
+		}
+	)
+
+	angular.module('myApp').controller('secondController', 
+		function(){
+			
+		}
+	)
+
+
+	</script>
+</body>
+
+</html>
