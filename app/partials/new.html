@@ -1,0 +1,14 @@
+<div>
+	<form>
+		<div class="form-group">
+			<label >Name</label>
+			<input type="text" class="form-control" ng-model="newHotel.name" placeholder="Enter name"></div>
+		<div class="form-group">
+			<label >Price</label>
+			<input  type="number" ng-model="newHotel.price" class="form-control" placeholder="Price"></div>
+		<div class="form-group">
+			<label >Description</label>
+			<input  type="text" maxlength="{{descLimit}}" ng-model="newHotel.description" class="form-control" placeholder="Description"></div>
+		<button class="btn btn-default" ng-click="addHotel(newHotel)">Add</button>
+	</form>
+</div>

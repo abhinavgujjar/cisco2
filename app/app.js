@@ -13,6 +13,10 @@ app.config(function($routeProvider) {
 		templateUrl: 'partials/listing.html'
 	});
 
+	$routeProvider.when('/new', {
+		templateUrl: 'partials/new.html'
+	});
+
 	$routeProvider.otherwise({
 		redirectTo : '/home'
 	})
