@@ -6,76 +6,91 @@
 	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css"></head>
 </head>
 <body class="container">
-	<div ng-controller="mainController">
-		<div>
+	<div >
+		<div ng-controller="greetingController">
 			<div class="col-md-5">
-				<h1>{{greeting}}</h1>		
+				<h1>{{greeting}}</h1>
 			</div>
 			<div class="col-md-7">
 				<h1>{{timeLeft | number : 0}} secs</h1>
 			</div>
 		</div>
-		
-		<hr/>
-		<div class="row">
-			<div class="col-md-4">
-				<input type="text" ng-model="searchTerm" class="form-control" placeholder="search" />	
-			</div>
-			<div class="col-md-4">
-				
-			</div>
-			<div class="col-md-4"></div>
-		</div>
-		<hr/>
-		<div>
-			<div class="col-md-9">
-				<div ng-repeat="hotel in hotels | filter : searchTerm" class="row well well-sm">
-					<div class="col-md-1">
-						<div>
-							<button class="btn btn-success text-center" ng-click="upVote(hotel)">
-								<span class="glyphicon glyphicon-thumbs-up"></span>
-							</button>
-						</div>
-						<div class="h3 text-center">{{hotel.rating}}</div>
-						<div>
-							<button class="btn btn-danger text-center" ng-click="downVote(hotel)">
-								<span class="glyphicon glyphicon-thumbs-down"></span>
-							</button>
-						</div>
-					</div>
-					<img ng-src="{{hotel.img}}" class="col-md-3">
-					<div class="col-md-6">
-						<div class="h3">{{hotel.name}}</div>
-						<div class="text-small">{{hotel.location | na | regionalize}}</div>
-						<div class="text-muted">{{hotel.description}}</div>
-					</div>
-					<div class="col-md-2">
-						<h2>{{hotel.price | xcon | currency}}</h2>
-					</div>
-				</div>
 
-			</div>
-			<div class="col-md-3">
-				<div class="panel panel-primary">
-					<div class="panel-heading">Quick Add</div>
-					<div class="panel-body">
-						<form>
-							<div class="form-group">
-								<label >Name</label>
-								<input type="text" class="form-control" ng-model="newHotel.name" placeholder="Enter name"></div>
-							<div class="form-group">
-								<label >Price</label>
-								<input  type="number" ng-model="newHotel.price" class="form-control" placeholder="Price"></div>
-							<button class="btn btn-default" ng-click="addHotel(newHotel)">Add</button>
-						</form>
-					</div>
+		<div ng-controller="listingController">
+			<hr/>
+			<div class="row">
+				<div class="col-md-4">
+					<input type="text" ng-model="searchTerm" class="form-control" placeholder="search" />
 				</div>
+				<div class="col-md-4"></div>
+				<div class="col-md-4"></div>
+			</div>
+			<hr/>
+			<div>
+				<div class="col-md-9">
+					<div ng-repeat="hotel in hotels | filter : searchTerm" class="row well well-sm">
+						<div class="col-md-1">
+							<div>
+								<button class="btn btn-success text-center" ng-click="upVote(hotel)">
+									<span class="glyphicon glyphicon-thumbs-up"></span>
+								</button>
+							</div>
+							<div class="h3 text-center">{{hotel.rating}}</div>
+							<div>
+								<button class="btn btn-danger text-center" ng-click="downVote(hotel)">
+									<span class="glyphicon glyphicon-thumbs-down"></span>
+								</button>
+							</div>
+						</div>
+						<img ng-src="{{hotel.img}}" class="col-md-3">
+						<div class="col-md-6">
+							<div class="h3">{{hotel.name}}</div>
+							<div class="text-small">{{hotel.location | na | regionalize}}</div>
+							<div class="text-muted">
 
+								<span ng-show="!hotel.showMore">{{hotel.description | limitTo : descLimit}}</span>
+								<span ng-show="hotel.showMore">{{hotel.description}}</span>
+								<span ng-show="hotel.description.length >
+									200 && !hotel.showMore">
+									<a href="" ng-click="toggleMore(hotel)">...more</a>
+								</span>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<h2>{{hotel.price | xcon | currency}}</h2>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-md-3" ng-controller="addController">
+					<div class="panel panel-primary">
+						<div class="panel-heading">Quick Add</div>
+						<div class="panel-body">
+							<form>
+								<div class="form-group">
+									<label >Name</label>
+									<input type="text" class="form-control" ng-model="newHotel.name" placeholder="Enter name"></div>
+								<div class="form-group">
+									<label >Price</label>
+									<input  type="number" ng-model="newHotel.price" class="form-control" placeholder="Price"></div>
+								<div class="form-group">
+									<label >Description</label>
+									<input  type="text" maxlength="{{descLimit}}" ng-model="newHotel.description" class="form-control" placeholder="Description"></div>
+								<button class="btn btn-default" ng-click="addHotel(newHotel)">Add</button>
+							</form>
+						</div>
+					</div>
+
+				</div>
 			</div>
 		</div>
 	</div>
 
 	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="js/filters.js"></script>
+	<script type="text/javascript" src="js/controllers/addController.js"></script>
+	<script type="text/javascript" src="js/controllers/listingController.js"></script>
+	<script type="text/javascript" src="js/controllers/greetingController.js"></script>
 </body>
 
 </html>

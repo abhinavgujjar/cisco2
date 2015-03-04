@@ -15,6 +15,9 @@ Resources
 
 - plnkr for directives - http://plnkr.co/edit/037865?p=preview
 
+- ng-inspector - Chrome extension
+
+
 Questions
 ----------------------
 
