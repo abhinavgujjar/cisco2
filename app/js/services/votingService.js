@@ -9,7 +9,6 @@ angular.module('voting', []).provider('votingService', function() {
 
 	this.$get = function() {
 
-
 		var votes = {
 			number: 0
 		}

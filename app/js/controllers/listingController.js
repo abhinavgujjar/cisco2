@@ -1,5 +1,4 @@
-app.controller('listingController', function($scope, uiconfig, votingService, hotelsData,
-	$http) {
+app.controller('listingController', function($scope, uiconfig, votingService, hotelsData) {
 
 	$scope.upVote = votingService.upVote;
 
@@ -13,21 +12,6 @@ app.controller('listingController', function($scope, uiconfig, votingService, ho
 		hotel.showMore = !hotel.showMore;
 	}
 
-	var promise = $http({
-		url: 'http://localhost:7400/app/data/hotels',
-		method: 'GET'
-	});
-
-	promise.success(
-
-		function(data) {
-			$scope.hotels = data;
-		}
-
-	);
-
-	promise.error(function(){
-		alert('error');
-	})
+	$scope.hotels = hotelsData.getHotel();
 
 });

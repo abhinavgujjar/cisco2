@@ -1,12 +1,20 @@
-app.factory('hotelsData', function(){
+app.factory('hotelsData', function($http) {
 
-	
+
 
 	return {
-		getHotels : function(){
-			return hotels;
+		getHotels: function() {
+
+			$http.get('data/hotels').success(
+				function(data) {
+				return data;
+				
+			}).error(function() {
+				alert('error');
+			});
+
 		},
-		addHotel : function(hotel){
+		addHotel: function(hotel) {
 
 			hotel.img = hotel.img || 'http://i.imgur.com/8kFwjSm.jpg';
 			hotel.rating = hotel.rating || 1;
