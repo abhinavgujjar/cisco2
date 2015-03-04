@@ -8,7 +8,9 @@ app.value('uiconfig', {
 });
 
 
-app.factory('votingService', function(uiconfig) {
+app.factory('votingService', 
+
+	function(uiconfig) {
 
 	var votes = {
 		number: 0
@@ -25,7 +27,9 @@ app.factory('votingService', function(uiconfig) {
 			}
 			votes.number++;
 		},
-		votes : votes
+		getVotes : function(){
+			return votes.number;
+		}
 	};
 
 	return votingService;

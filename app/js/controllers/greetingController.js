@@ -3,7 +3,7 @@
 app.controller('greetingController', function($scope, $interval, votingService) {
 
 
-	$scope.votes = votingService.votes;
+	$scope.getVotes = votingService.getVotes;
 	var hours = (new Date()).getHours();
 	var timeOfDay = 'Morning';
 	if (hours > 12) {

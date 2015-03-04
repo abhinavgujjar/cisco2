@@ -23,5 +23,10 @@ Questions
 
 - Why does angular not show error for undefined variables ?
 
-- 
+- Difference between factory and service functions
+	
+	Read the articles below to understand this in more depth.
+	
+	http://stackoverflow.com/questions/14324451/angular-service-vs-angular-factory
+	http://tylermcginnis.com/angularjs-factory-vs-service-vs-provider/ 
 
