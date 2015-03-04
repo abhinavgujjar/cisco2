@@ -10,6 +10,24 @@ app.filter('xcon', function() {
 
 })
 
+app.filter('na', function() {
+
+	//should return anotherfunction taht will be applied for each value
+	return function(input) {
+		return input || 'NA';
+	}
+
+})
+
+app.filter('regionalize', function() {
+
+	//should return anotherfunction taht will be applied for each value
+	return function(input) {
+		return input.replace('Bangalore', 'Bengaluru');
+	}
+
+})
+
 //rerference a module
 app.controller('mainController', function($scope, $interval) {
 
