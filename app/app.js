@@ -1,10 +1,43 @@
 //declared a module
 var app = angular.module('myApp', []);
 
-//rerference a module
-app.controller('mainController', function($scope, $rootScope) {
+app.filter('xcon', function() {
 
-	$scope.greeting = 'Good Afternoon, Cisco!!';
+	//should return anotherfunction taht will be applied for each value
+	return function(input) {
+		return input / 50;
+	}
+
+})
+
+//rerference a module
+app.controller('mainController', function($scope, $interval) {
+
+	var hours = (new Date()).getHours();
+	var timeOfDay = 'Morning';
+	if (hours > 12) {
+		timeOfDay = 'Afternoon'
+	}
+
+	if (hours > 16) {
+		timeOfDay = 'Evening'
+	}
+
+	if (hours > 20) {
+		timeOfDay = 'Night'
+	}
+
+	$scope.greeting = 'Good ' + timeOfDay + ', Cisco!';
+
+
+
+	var final = (new Date('29 March 2015')).getTime();
+
+	$interval(function() {
+		var now = (new Date()).getTime();
+		$scope.timeLeft = (final - now) / 1000;
+	}, 1000);
+
 
 	$scope.upVote = function(hotel) {
 		hotel.rating++;
