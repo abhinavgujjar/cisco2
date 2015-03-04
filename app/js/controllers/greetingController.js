@@ -1,7 +1,9 @@
 
 //rerference a module
-app.controller('greetingController', function($scope, $interval) {
+app.controller('greetingController', function($scope, $interval, votingService) {
 
+
+	$scope.votes = votingService.votes;
 	var hours = (new Date()).getHours();
 	var timeOfDay = 'Morning';
 	if (hours > 12) {
