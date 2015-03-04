@@ -1,5 +1,5 @@
 //declared a module
-var app = angular.module('myApp', []);
+var app = angular.module('myApp', ['time']);
 
 app.value('uiconfig', {
 	descLimit: 200,
@@ -36,31 +36,3 @@ app.factory('votingService',
 
 	})
 
-
-app.factory('getTimeOfDay', function() {
-
-	function getTimeOfDay(){
-		var hours = (new Date()).getHours();
-			var timeOfDay = 'Morning';
-			if (hours > 12) {
-				timeOfDay = 'Afternoon'
-			}
-
-			if (hours > 16) {
-				timeOfDay = 'Evening'
-			}
-
-			if (hours > 20) {
-				timeOfDay = 'Night'
-			}
-
-			return timeOfDay;
-
-	}
-
-	return  {
-		getTimeOfDay: getTimeOfDay
-	}
-
-	
-})

@@ -1,11 +1,11 @@
 
 //rerference a module
-app.controller('greetingController', function($scope, $interval, votingService, getTimeOfDay) {
+app.controller('greetingController', function($scope, $interval, votingService, timeService) {
 
 
 	$scope.getVotes = votingService.getVotes;
 	
-	$scope.greeting = 'Good ' + getTimeOfDay() + ', Cisco!';
+	$scope.greeting = 'Good ' + timeService.getTimeOfDay() + ', Cisco!';
 
 
 
