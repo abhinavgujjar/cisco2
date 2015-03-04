@@ -13,6 +13,10 @@ app.config(function($routeProvider) {
 		templateUrl: 'partials/listing.html'
 	});
 
+	$routeProvider.otherwise({
+		redirectTo : '/home'
+	})
+
 })
 
 app.value('uiconfig', {
