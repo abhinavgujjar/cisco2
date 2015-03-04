@@ -6,7 +6,19 @@ app.controller('mainController', function($scope, $rootScope) {
 
 	$scope.greeting = 'Good Afternoon, Cisco!!';
 
+	$scope.upVote = function(hotel) {
+		hotel.rating++;
+	}
 
+	$scope.downVote = function(hotel) {
+		hotel.rating--;
+	}
+	$scope.addHotel = function(hotel) {
+		var newHotel = angular.copy(hotel);
+		$scope.hotels.push(newHotel);
+
+		$scope.newHotel = null;
+	}
 	$scope.hotels = [{
 		"name": "Golden Palms Hotel & Spa",
 		"img": "http://i.imgur.com/dmlhhkU.jpg",
