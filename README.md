@@ -17,6 +17,8 @@ Resources
 
 - ng-inspector - Chrome extension
 
+- ng-annotate : node module to make the angular files minification and uglification safe.
+
 
 Questions
 ----------------------

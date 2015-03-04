@@ -1,4 +1,4 @@
-app.controller('addController', function($scope, uiconfig, hotelsData) {
+app.controller('addController', ["$scope", "uiconfig", "hotelsData", function($scope, uiconfig, hotelsData) {
 
 	$scope.descLimit = uiconfig.descLimit;
 
@@ -9,4 +9,4 @@ app.controller('addController', function($scope, uiconfig, hotelsData) {
 		$scope.newHotel = null;
 	}
 
-});
+}]);
