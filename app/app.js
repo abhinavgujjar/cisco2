@@ -1,5 +1,19 @@
 //declared a module
-var app = angular.module('myApp', ['time']);
+var app = angular.module('myApp', ['time', 'ngRoute']);
+
+//'$route' service
+
+app.config(function($routeProvider) {
+
+	$routeProvider.when('/home', {
+		templateUrl: 'partials/home.html'
+	});
+
+	$routeProvider.when('/listing', {
+		templateUrl: 'partials/listing.html'
+	});
+
+})
 
 app.value('uiconfig', {
 	descLimit: 200,
@@ -35,4 +49,3 @@ app.factory('votingService',
 		return votingService;
 
 	})
-

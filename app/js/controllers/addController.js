@@ -1,10 +1,10 @@
-app.controller('addController', function($scope, uiconfig) {
+app.controller('addController', function($scope, uiconfig, hotelsData) {
 
 	$scope.descLimit = uiconfig.descLimit;
 
 	$scope.addHotel = function(hotel) {
 		var newHotel = angular.copy(hotel);
-		$scope.hotels.push(newHotel);
+		hotelsData.addHotel(newHotel);
 
 		$scope.newHotel = null;
 	}
