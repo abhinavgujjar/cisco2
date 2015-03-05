@@ -7,6 +7,12 @@ app.controller('mainCtrl', function($scope){
 
 	$scope.inputA = 'This  is Input A';
 	$scope.inputB = 'This  is Input B';
+
+	$scope.votes = 7;
+
+	$scope.$on('voted', function(event, args){
+		$scope.votes += args;
+	})
 })
 
 app.config(function($routeProvider, votingServiceProvider) {
@@ -30,7 +36,9 @@ app.config(function($routeProvider, votingServiceProvider) {
 		redirectTo : '/home'
 	})
 
-})
+});
+
+
 
 app.value('uiconfig', {
 	descLimit: 200,

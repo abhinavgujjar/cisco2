@@ -1,13 +1,9 @@
 
 //rerference a module
-app.controller('greetingController', function($scope, $interval, votingService, timeService) {
+app.controller('greetingController', function($scope, $interval, timeService) {
 
 
-	$scope.getVotes = votingService.getVotes;
-	
 	$scope.greeting = 'Good ' + timeService.getTimeOfDay() + ', Cisco!';
-
-
 
 	var final = (new Date('29 March 2015')).getTime();
 

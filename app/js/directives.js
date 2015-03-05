@@ -27,6 +27,20 @@ app.directive('panel', function() {
 
 });
 
+app.directive('onlyEven', function() {
+	//return a directive definition object
+	return {
+		restrict: 'A',
+		require : 'ngModel',
+		link : function(scope, element, attrs, ctrl){
+			ctrl.$validators.even = function(modelValue){
+				return (modelValue % 2) === 0;
+			}
+		}
+	};
+
+});
+
 app.directive('preview', function() {
 	//return a directive definition object
 	return {

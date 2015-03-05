@@ -1,9 +1,15 @@
 app.controller('listingController', function($scope, uiconfig, votingService, hotelsData) {
 
-	$scope.upVote = votingService.upVote;
+	$scope.upVote = function(hotel) {
+		votingService.upVote(hotel);
+
+		$scope.$emit('voted', 1);
+	};
 
 	$scope.downVote = function(hotel) {
 		votingService.downVote(hotel);
+
+		$scope.$emit('voted', -1);
 	};
 
 	$scope.descLimit = uiconfig.descLimit;
