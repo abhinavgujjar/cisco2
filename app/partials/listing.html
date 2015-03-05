@@ -54,24 +54,22 @@
 
 	<div class="col-md-3">
 		<div ng-controller="addController">
-			<div class="panel panel-primary">
-				<div class="panel-heading">Quick Add</div>
-				<div class="panel-body">
-					<form name="quickForm">
-						<div class="form-group">
-							<label >Name</label>
-							<input requried type="text" class="form-control" ng-model="newHotel.name" placeholder="Enter name"></div>
-						<div class="form-group">
-							<label >Price</label>
-							<input required  type="number" ng-model="newHotel.price" class="form-control" placeholder="Price"></div>
-						<div class="form-group">
-							<carousel images="images" selected-image="newHotel.img"></carousel>
 
-						</div>
-						<button ng-disabled="quickForm.$invalid" class="btn btn-default" ng-click="addHotel(newHotel)">Add</button>
-					</form>
-				</div>
-			</div>
+			<panel heading="Quick Add">
+				<form name="quickForm">
+					<div class="form-group">
+						<label >Name</label>
+						<input requried type="text" class="form-control" ng-model="newHotel.name" placeholder="Enter name"></div>
+					<div class="form-group">
+						<label >Price</label>
+						<input required  type="number" ng-model="newHotel.price" class="form-control" placeholder="Price"></div>
+					<div class="form-group">
+						<carousel images="images" selected-image="newHotel.img"></carousel>
+
+					</div>
+					<button ng-disabled="quickForm.$invalid" class="btn btn-default" ng-click="addHotel(newHotel)">Add</button>
+				</form>
+			</panel>
 
 		</div>
 	</div>

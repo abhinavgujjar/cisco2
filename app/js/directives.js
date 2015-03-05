@@ -14,6 +14,19 @@ app.directive('homeNav', function() {
 	}
 })
 
+app.directive('panel', function() {
+	//return a directive definition object
+	return {
+		restrict: 'E',
+		transclude : true,
+		templateUrl: 'partials/panel.html',
+		scope: {
+			heading: '@'
+		}
+	};
+
+});
+
 app.directive('preview', function() {
 	//return a directive definition object
 	return {
