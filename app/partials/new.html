@@ -16,36 +16,68 @@
 </style>
 <div>
 	<div class="col-md-5 ">
-		<form name="hotelForm">
-			<div class="form-group">
-				<label >Name</label>
-				<input name="vName" ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }" type="text" required minlength="4" class="form-control" ng-model="newHotel.name" placeholder="Enter name">
-				<div class="text-danger" ng-show="hotelForm.vName.$invalid && hotelForm.vName.$dirty">"{{hotelForm.vName.$viewValue}}" is invalid</div>
 
-			</div>
-			<div class="form-group">
-				<label >Price</label>
-				<input  type="number" required min="1000" max="50000" ng-model="newHotel.price" class="form-control" placeholder="Price"></div>
+	<ul class="nav nav-tabs" ng-controller="navController">
+			<li ng-class="{'active' : activePath === '/home'}">
+				<a href="">Basics</a>
+			</li>
+			<li ng-class="{'active' : activePath === '/listing'}">
+				<a href="">Contact</a>
+			</li>
+			<li ng-class="{'active' : activePath === '/new'}">
+				<a href="">Extra</a>
+			</li>
+		</ul>
 
-			<div class="form-group">
-				<label >Phone Number</label>
-				<input  type="text" ng-pattern="/^[789]\d{9}$/" ng-model="newHotel.location" class="form-control" placeholder="Phone number"></div>
-			<div class="form-group"></div>
-			<div class="form-group">
-				<label >Password</label>
-				<input  type="text" ng-model="password" class="form-control" placeholder="Phone number"></div>
+		<ng-form name="hotelForm">
 
-			<div class="form-group"></div>
-			<div class="form-group">
-				<label >Confirm Password</label>
-				<input  type="text" ng-model="confirmPassword" class="form-control" placeholder="Phone number"></div>
-			<div class="form-group"></div>
-			<div class="form-group">
-				<label >Description</label>
-				<textarea rows="7" ng-model="newHotel.description" class="form-control" placeholder="Description"></textarea>
-			</div>
-			<button ng-disabled="hotelForm.$invalid && passwordMatch()" class="btn btn-primary" ng-click="addHotel(newHotel)">Add</button>
-		</form>
+			<ng-form name="basics">
+				<div class="form-group">
+					<label >Name</label>
+					<input name="vName" ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }" type="text" required minlength="4" class="form-control" ng-model="newHotel.name" placeholder="Enter name">
+					<div class="text-danger" ng-show="hotelForm.vName.$invalid && hotelForm.vName.$dirty">"{{hotelForm.vName.$viewValue}}" is invalid</div>
+
+				</div>
+				<div class="form-group">
+					<label >Price</label>
+					<input  type="number" required min="1000" max="50000" ng-model="newHotel.price" class="form-control" placeholder="Price"></div>
+				<button ng-disabled="basics.$invalid" class="btn btn-primary">basics</button>
+			</ng-form>
+			<ng-form name="contact">
+				<div class="form-group">
+					<label >Phone Number</label>
+					<input  type="text" ng-pattern="/^[789]\d{9}$/" ng-model="newHotel.location" class="form-control" placeholder="Phone number"></div>
+				<div class="form-group"></div>
+				<div class="form-group">
+					<label >Password</label>
+					<input  type="text" ng-model="password" class="form-control" placeholder="Phone number"></div>
+
+				<div class="form-group"></div>
+				<div class="form-group">
+					<label >Confirm Password</label>
+					<input  type="text" ng-model="confirmPassword" class="form-control" placeholder="Phone number"></div>
+					<button ng-disabled="contact.$invalid" class="btn btn-primary">contact</button>
+			</ng-form>
+			<ng-form name="extra">
+				<div class="form-group"></div>
+				<div class="form-group">
+					<label >Description</label>
+					<textarea rows="7" ng-model="newHotel.description" class="form-control" placeholder="Description"></textarea>
+				</div>
+			</ng-form>
+			<button ng-disabled="hotelForm.$invalid" class="btn btn-primary" ng-click="addHotel(newHotel)">Add</button>
+		</ng-form>
 	</div>
-	<div class="col-md-5">{{newHotel}}</div>
+	<div class="col-md-5">
+		<div>
+			<button class="pull-left" ng-click="prev()">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</button>
+			<button class="pull-right" ng-click="next()">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+			</button>
+		</div>
+		<div>
+			<img ng-src="{{images[index]}}" class="col-md-10 col-md-offset-1"></div>
+	</div>
 </div>
