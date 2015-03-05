@@ -1,7 +1,13 @@
 //declared a module
-var app = angular.module('myApp', ['time', 'ngRoute', 'voting']);
+var app = angular.module('myApp', ['time', 'ngRoute', 'voting', 'ngSanitize']);
 
 //'$route' service
+
+app.controller('mainCtrl', function($scope){
+
+	$scope.inputA = 'Input A';
+	$scope.inputB = 'Input B';
+})
 
 app.config(function($routeProvider, votingServiceProvider) {
 

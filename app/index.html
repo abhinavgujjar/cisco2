@@ -4,50 +4,45 @@
 	<title>Hello World!</title>
 	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
 	<script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
+	<script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css"></head>
 </head>
-<body class="container">
-	<div >
-		<ul class="nav nav-pills" ng-controller="navController">
-			<li role="presentation" ng-class="{'active' : activePath === '/home'}">
-				<a href="#/home">Home</a>
-			</li>
-			<li role="presentation" ng-class="{'active' : activePath === '/listing'}">
-				<a href="#/listing">Listing</a>
-			</li>
-			<li role="presentation" ng-class="{'active' : activePath === '/new'}">
-				<a href="#/new">New</a>
-			</li>
-		</ul>
+<body class="container" ng-controller="mainCtrl">
+	<div class="row">
+		<home-nav></home-nav>
 		<p></p>
-		<div ng-controller="greetingController" class="row">
-			<div class="col-md-5">
-				<h1>{{greeting}}</h1>
-			</div>
-			<div class="col-md-5">
-				<h1>{{timeLeft | number : 0}} secs</h1>
-			</div>
-			<div class="col-md-2">
-				<h1 class="text-success">{{getVotes()}}</h1>
+		<greeting></greeting>
+		<p></p>
+		<div class="row">
+			<div class="col-md-2">Input A:</div>
+			<div class="col-md-10">
+				<preview></preview>
 			</div>
 		</div>
-		<p></p>
-		
-		<div>
-			<ng-view></ng-view>
+		<div class="row">
+			<div class="col-md-2">Input B:</div>
+			<div class="col-md-10">
+				<preview></preview>
+			</div>
 		</div>
 
+		<!-- <div>
+		<ng-view></ng-view>
 	</div>
+	-->
+</div>
+<hr/>
 
-	<script type="text/javascript" src="app.js"></script>
-	<script type="text/javascript" src="js/filters.js"></script>
-	<script type="text/javascript" src="js/controllers/addController.js"></script>
-	<script type="text/javascript" src="js/controllers/listingController.js"></script>
-	<script type="text/javascript" src="js/controllers/greetingController.js"></script>
-	<script type="text/javascript" src="js/controllers/navController.js"></script>
-	<script type="text/javascript" src="js/services/timeService.js"></script>
-	<script type="text/javascript" src="js/services/hotelsData.js"></script>
-	<script type="text/javascript" src="js/services/votingService.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="js/filters.js"></script>
+<script type="text/javascript" src="js/controllers/addController.js"></script>
+<script type="text/javascript" src="js/controllers/listingController.js"></script>
+<script type="text/javascript" src="js/controllers/greetingController.js"></script>
+<script type="text/javascript" src="js/controllers/navController.js"></script>
+<script type="text/javascript" src="js/services/timeService.js"></script>
+<script type="text/javascript" src="js/services/hotelsData.js"></script>
+<script type="text/javascript" src="js/services/votingService.js"></script>
+<script type="text/javascript" src="js/directives.js"></script>
 </body>
 
 </html>
