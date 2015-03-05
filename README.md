@@ -13,15 +13,11 @@ Resources
 
 - [mongoose](http://cesanta.com/mongoose.shtml) is a lightweight web server. Serves up static filese
 
-- plnkr for directives - http://plnkr.co/edit/037865?p=preview
-
 - ng-inspector - Chrome extension
 
 - ng-annotate : node module to make the angular files minification and uglification safe.
 
-- plunk for $q promises - http://plnkr.co/edit/L4HzkO72JNb7IO3NAbdY?p=preview
-
-- plunk for custom directives - http://plnkr.co/edit/RuuSMBkNKkGjPG2zym9C?p=preview
+- Great article on [angular validation](http://odetocode.com/blogs/scott/archive/2014/10/16/working-with-validators-and-messages-in-angularjs.aspx)
 
 Questions
 ----------------------
@@ -38,3 +34,14 @@ Questions
 - How to deal with parrellal callback errors.
 
 - confirm password and invalidate form.
+
+- defining a controller on a directive. Does that create a new scope ?
+
+Plunks
+----------------
+
+- q promises - http://plnkr.co/edit/L4HzkO72JNb7IO3NAbdY?p=preview
+
+- custom directives - http://plnkr.co/edit/RuuSMBkNKkGjPG2zym9C?p=preview
+
+- directives - http://plnkr.co/edit/037865?p=preview
