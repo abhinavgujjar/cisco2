@@ -25,30 +25,9 @@ app.controller('addController', ["$scope", "uiconfig", "hotelsData", '$location'
 		"http://i.imgur.com/OGLIG3N.jpg"
 	];
 
-	$scope.index = 0;
-
-	$scope.next = function() {
-
-		if ($scope.index < $scope.images.length) {
-			$scope.index++;
-		} else {
-			$scope.index = 0;
-		}
-	}
-
-	$scope.prev = function() {
-		if ($scope.index > 0) {
-			$scope.index--;
-		} else {
-			$scope.index = $scope.images.length;
-		}
-	}
-
-
+	
 
 	$scope.addHotel = function(hotel) {
-
-		if ($scope.hotelForm.$valid) {
 
 			var newHotel = angular.copy(hotel);
 			newHotel.img = $scope.images[$scope.index];
@@ -58,9 +37,6 @@ app.controller('addController', ["$scope", "uiconfig", "hotelsData", '$location'
 
 
 			$scope.newHotel = null;
-		} else {
-			alert('Invalid !');
-		}
 	}
 
 }]);
