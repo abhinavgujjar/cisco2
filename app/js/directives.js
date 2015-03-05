@@ -53,7 +53,7 @@ app.directive('carousel', function() {
 				} else {
 					$scope.index = $scope.images.length;
 				}
-				
+
 				$scope.selectedImage = $scope.images[$scope.index];
 			}
 
