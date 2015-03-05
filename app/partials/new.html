@@ -31,7 +31,7 @@
 
 		<ng-form name="hotelForm">
 			<div class="form-group">
-				<label >Name</label>
+				<label zoom>Name</label>
 				<input name="vName" ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }" type="text" required minlength="4" class="form-control" ng-model="newHotel.name" placeholder="Enter name">
 				<div class="text-danger" ng-show="hotelForm.vName.$invalid && hotelForm.vName.$dirty">"{{hotelForm.vName.$viewValue}}" is invalid</div>
 

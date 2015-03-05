@@ -27,6 +27,20 @@ app.directive('preview', function() {
 
 });
 
+app.directive('zoom', function(){
+
+	return {
+		restrict : 'A',
+		link : function(scope, element, attrs, ctrl){
+			element.on('mouseenter', function(){
+				element.css({
+					'font-size' : '40px'
+				});
+			})
+		}
+	}
+})
+
 
 app.directive('carousel', function() {
 	//return a directive definition object
