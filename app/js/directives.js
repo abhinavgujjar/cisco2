@@ -20,7 +20,8 @@ app.directive('preview', function() {
         restrict: 'E',
         templateUrl: 'partials/preview.html',
         scope: {
-        	
+        	message : '=desc',
+        	rows : '@rows'
         }
     };
 

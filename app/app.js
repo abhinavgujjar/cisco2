@@ -5,8 +5,8 @@ var app = angular.module('myApp', ['time', 'ngRoute', 'voting', 'ngSanitize']);
 
 app.controller('mainCtrl', function($scope){
 
-	$scope.inputA = 'Input A';
-	$scope.inputB = 'Input B';
+	$scope.inputA = 'This  is Input A';
+	$scope.inputB = 'This  is Input B';
 })
 
 app.config(function($routeProvider, votingServiceProvider) {
