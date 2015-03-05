@@ -15,7 +15,7 @@
 
 </style>
 <div>
-	<div class="col-md-5 col-md-offset-2">
+	<div class="col-md-5 ">
 		<form name="hotelForm">
 			<div class="form-group">
 				<label >Name</label>
@@ -29,20 +29,22 @@
 
 			<div class="form-group">
 				<label >Phone Number</label>
-				<input  type="text" ng-pattern="/^[789]\d{9}$/" ng-model="newHotel.location" class="form-control" placeholder="Phone number"></div><div class="form-group">
-			</div>
+				<input  type="text" ng-pattern="/^[789]\d{9}$/" ng-model="newHotel.location" class="form-control" placeholder="Phone number"></div>
+			<div class="form-group"></div>
 			<div class="form-group">
 				<label >Password</label>
-				<input  type="text" ng-model="password" class="form-control" placeholder="Phone number"></div><div class="form-group">
-			</div><div class="form-group">
+				<input  type="text" ng-model="password" class="form-control" placeholder="Phone number"></div>
+
+			<div class="form-group"></div>
+			<div class="form-group">
 				<label >Confirm Password</label>
-				<input  type="text" ng-model="confirmPassword" class="form-control" placeholder="Phone number"></div><div class="form-group">
-			</div>
+				<input  type="text" ng-model="confirmPassword" class="form-control" placeholder="Phone number"></div>
+			<div class="form-group"></div>
 			<div class="form-group">
 				<label >Description</label>
 				<textarea rows="7" ng-model="newHotel.description" class="form-control" placeholder="Description"></textarea>
 			</div>
-			<button ng-disabled="hotelForm.$invalid" class="btn btn-primary" ng-click="addHotel(newHotel)">Add</button>
+			<button ng-disabled="hotelForm.$invalid && passwordMatch()" class="btn btn-primary" ng-click="addHotel(newHotel)">Add</button>
 		</form>
 	</div>
 	<div class="col-md-5">{{newHotel}}</div>
