@@ -21,6 +21,8 @@ Resources
 
 - plunk for $q promises - http://plnkr.co/edit/L4HzkO72JNb7IO3NAbdY?p=preview
 
+- plunk for custom directives - http://plnkr.co/edit/RuuSMBkNKkGjPG2zym9C?p=preview
+
 Questions
 ----------------------
 
