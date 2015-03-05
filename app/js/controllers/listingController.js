@@ -12,7 +12,7 @@ app.controller('listingController', function($scope, uiconfig, votingService, ho
 		hotel.showMore = !hotel.showMore;
 	}
 
-	hotelsData.getHotels(function(data){
+	hotelsData.getHotels().then(function(data){
 		$scope.hotels = data;
 	});
 

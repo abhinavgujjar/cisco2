@@ -33,3 +33,6 @@ Questions
 	http://stackoverflow.com/questions/14324451/angular-service-vs-angular-factory
 	http://tylermcginnis.com/angularjs-factory-vs-service-vs-provider/ 
 
+- How to deal with parrellal callback errors.
+
+- confirm password and invalidate form.

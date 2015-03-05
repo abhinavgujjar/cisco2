@@ -3,10 +3,16 @@ app.controller('addController', ["$scope", "uiconfig", "hotelsData", function($s
 	$scope.descLimit = uiconfig.descLimit;
 
 	$scope.addHotel = function(hotel) {
-		var newHotel = angular.copy(hotel);
-		hotelsData.addHotel(newHotel);
 
-		$scope.newHotel = null;
+		if ($scope.hotelForm.$valid) {
+
+			var newHotel = angular.copy(hotel);
+			hotelsData.addHotel(newHotel);
+
+			$scope.newHotel = null;
+		} else {
+			alert('Invalid !');
+		}
 	}
 
 }]);

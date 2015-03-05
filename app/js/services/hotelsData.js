@@ -1,9 +1,8 @@
-app.factory('hotelsData', function($http) {
-
-
+app.factory('hotelsData', function($http, $q) {
 
 	return {
-		getHotels: function(callback) {
+		getHotels: function() {
+			var deferred = $q.defer();
 
 			$http.get('https://api.parse.com/1/classes/hotels', {
 				headers: {
@@ -11,8 +10,10 @@ app.factory('hotelsData', function($http) {
 					'X-Parse-REST-API-Key': 'BAo98XptWm6R20zPNSxKAMv2I36WU0Mactxgs8LN'
 				}
 			}).success(function(data){
-				callback(data.results);
+				deferred.resolve(data.results);
 			});
+
+			return deferred.promise;
 
 		},
 		addHotel: function(hotel) {
