@@ -19,6 +19,7 @@ Resources
 
 - ng-annotate : node module to make the angular files minification and uglification safe.
 
+- plunk for $q promises - http://plnkr.co/edit/L4HzkO72JNb7IO3NAbdY?p=preview
 
 Questions
 ----------------------
