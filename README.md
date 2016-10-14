@@ -11,7 +11,7 @@ Resources
 	 bower install angular
 	 ``
 
-- [mongoose](http://cesanta.com/mongoose.shtml) is a lightweight web server. Serves up static filese
+- [mongoose](http://cesanta.com/mongoose.shtml) is a lightweight web server. Serves up static files
 
 - ng-inspector - Chrome extension
 
@@ -22,7 +22,7 @@ Resources
 Questions
 ----------------------
 
-- Why does angular not show error for undefined variables ?
+- Why does angular not show error for undefined variables?
 
 - Difference between factory and service functions
 	
@@ -31,11 +31,11 @@ Questions
 	http://stackoverflow.com/questions/14324451/angular-service-vs-angular-factory
 	http://tylermcginnis.com/angularjs-factory-vs-service-vs-provider/ 
 
-- How to deal with parrellal callback errors.
+- How to deal with parallel callback errors.
 
 - Confirm password and invalidate form.
 
-- Defining a controller on a directive. Does that create a new scope ?
+- Defining a controller on a directive. Does that create a new scope?
 
 Plunks
 ----------------
