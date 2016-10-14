@@ -33,9 +33,9 @@ Questions
 
 - How to deal with parrellal callback errors.
 
-- confirm password and invalidate form.
+- Confirm password and invalidate form.
 
-- defining a controller on a directive. Does that create a new scope ?
+- Defining a controller on a directive. Does that create a new scope ?
 
 Plunks
 ----------------
